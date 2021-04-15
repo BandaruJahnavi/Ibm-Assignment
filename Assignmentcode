@@ -1,0 +1,21 @@
+package org.selenide;
+
+import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+
+public class GoogleTest {
+    @Test
+    public void googleSearch() {
+        open("http://www.google.com/");
+        $(By.name("q")).setValue("games of thrones").pressEnter();
+        $(By.cssSelector("body.srp.vasq.wf-b:nth-child(2) div.main:nth-child(13) div.big div.GyAeWb:nth-child(12) div.D6j0vc:nth-child(1) div.eqAnXb:nth-child(3) div.hlcw0c:nth-child(1) div.g div:nth-child(2) div.tF2Cxc div.yuRUbf:nth-child(1) a:nth-child(1) > h3.LC20lb.DKV0Md:nth-child(2)")).click();
+        System.out.println(Selenide.title());
+        String Value=$(By.cssSelector("body.mediawiki.ltr.sitedir-ltr.mw-hide-empty-elt.ns-0.ns-subject.page-Game_of_Thrones.rootpage-Game_of_Thrones.skin-vector.action-view.skin-vector-legacy:nth-child(2) div.mw-body:nth-child(3) div.mw-body-content:nth-child(5) div.mw-content-ltr:nth-child(7) div.mw-parser-output:nth-child(1) table.infobox.vevent:nth-child(4) tbody:nth-child(1) tr:nth-child(13) > td.infobox-data")).text();
+         System.out.println(Value);
+
+    }
+}
